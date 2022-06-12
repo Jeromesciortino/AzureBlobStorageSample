@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "REST API Page";
+}
+
+<div>
+    <div>
+        <h1>Using RestAPI</h1>
+    </div>
+    <div>
+        <h2>Upload: </h2>
+    </div>
+    @using (Html.BeginForm("Upload", "RestAPI", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <span>Select File:</span>
+        <input type="file" name="postedFile" />
+        <br />
+        <input type="submit" value="Upload" />
+        <span style="color:green">@ViewBag.Message</span>
+    }
+
+    <hr />
+
+    @{
+        AzureStorageSample.Business.IBlobActions blobActions = new AzureStorageSample.Business.RestAPIBlobActions();
+
+        AzureStorageSample.Models.ViewModels.BlobListViewModel blobListViewModel = new AzureStorageSample.Models.ViewModels.BlobListViewModel()
+        {
+            Blobs = blobActions.List()
+        };
+
+        Html.RenderPartial("~/Views/RestAPI/_Blobs.cshtml", blobListViewModel);
+    }
+
+    <hr />
+
+    <h4>CODE: <a href="https://github.com/Jeromesciortino/AzureBlobStorageSample/blob/main/AzureStorageSample/Business/RestAPIBlobActions.cs">AzureStorageSample/Business/RestAPIBlobActions.cs</a></h4>
+</div>

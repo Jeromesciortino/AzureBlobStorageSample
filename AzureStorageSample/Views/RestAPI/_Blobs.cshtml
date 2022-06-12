@@ -1,0 +1,11 @@
+﻿@model AzureStorageSample.Models.ViewModels.BlobListViewModel
+
+<div>
+    <h2>Blobs in Containter: </h2>
+</div>
+
+@foreach (var item in Model.Blobs)
+{
+    @Html.ActionLink(item, "DownloadBlob", "RestAPI",  new { blobName = item }, null)
+    <br />
+}
