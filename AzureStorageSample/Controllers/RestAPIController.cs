@@ -1,7 +1,7 @@
-﻿using AzureStorageSample.Business;
-using System;
+﻿using System;
 using System.Web;
 using System.Web.Mvc;
+using AzureStorageSample.Business;
 
 namespace AzureStorageSample.Controllers
 {

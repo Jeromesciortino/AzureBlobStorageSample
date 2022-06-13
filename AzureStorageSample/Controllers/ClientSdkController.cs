@@ -1,9 +1,7 @@
-﻿using Azure.Storage.Blobs;
-using AzureStorageSample.Business;
-using System;
-using System.IO;
+﻿using System;
 using System.Web;
 using System.Web.Mvc;
+using AzureStorageSample.Business;
 
 namespace AzureStorageSample.Controllers
 {

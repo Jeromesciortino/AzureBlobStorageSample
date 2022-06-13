@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web;
+using System.Collections.Generic;
 
 namespace AzureStorageSample.Business
 {

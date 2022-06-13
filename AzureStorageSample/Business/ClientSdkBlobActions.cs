@@ -1,9 +1,9 @@
-﻿using Azure.Storage.Blobs;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.IO;
 using System.Web;
+using Azure.Storage.Blobs;
+using System.Configuration;
+using System.Collections.Generic;
 
 namespace AzureStorageSample.Business
 {
@@ -23,6 +23,7 @@ namespace AzureStorageSample.Business
 
             blobClient.Upload(postedFile.InputStream);
         }
+
         public List<string> List()
         {
             string blobStorageConnectionString = String.Format(BlobStorageConnectionString, BlobStorageAccountName, BlobStorageAccountKey);

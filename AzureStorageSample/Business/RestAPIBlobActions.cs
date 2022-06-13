@@ -1,16 +1,15 @@
-﻿using AzureStorageSample.Models.XMLModels;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Web;
+using System.Linq;
+using System.Text;
 using System.Configuration;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using AzureStorageSample.Models.XMLModels;
 
 namespace AzureStorageSample.Business
 {

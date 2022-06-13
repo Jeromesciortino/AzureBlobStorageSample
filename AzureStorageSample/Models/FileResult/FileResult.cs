@@ -25,7 +25,7 @@ namespace AzureStorageSample.Models.FileResult
         {
             get; set;
         }
-        
+
         public string BlobName
         {
             get; set;
