@@ -36,5 +36,25 @@ namespace AzureStorageSample.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult DownloadAll()
+        {
+            IBlobActions blobActions = new ClientSdkBlobActions();
+            var res = blobActions.DownloadAllBlobs(blobActions.List());
+
+            return File(res.BlobStream, res.ContentType, res.BlobName);
+        }
+
+        [HttpGet]
+        public ActionResult TestDownloadAll()
+        {
+            IBlobActions blobActions = new ClientSdkBlobActions();
+            var res = blobActions.TestDownloadAllBlobs(blobActions.List());
+
+            ViewBag.DownloadInfo = $"DOWNLOADED {res.DownloadedBlobsSizes.Count} FILE(s)\nSIZE(s): {String.Join(", ", res.DownloadedBlobsSizes)} bytes\nDURATION: {res.DownloadDuration}";
+
+            return View("Index");
+        }
     }
 }

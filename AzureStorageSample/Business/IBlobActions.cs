@@ -10,5 +10,9 @@ namespace AzureStorageSample.Business
         List<string> List();
 
         Models.FileResult.FileResult Download(string blobName);
+
+        Models.FileResult.FileResult TestDownloadAllBlobs(List<string> blobNames);
+
+        Models.FileResult.FileResult DownloadAllBlobs(List<string> blobNames);
     }
 }

@@ -1,14 +1,18 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace AzureStorageSample.Models.FileResult
 {
     public class FileResult
     {
-        public FileResult(Stream blobStream, string contentType, string blobName)
+        public FileResult(Stream blobStream, string contentType, string blobName, TimeSpan? downloadDuration = null, List<string> downloadedBlobsSizes = null)
         {
             BlobStream = blobStream;
             ContentType = contentType;
             BlobName = blobName;
+            DownloadDuration = downloadDuration;
+            DownloadedBlobsSizes = downloadedBlobsSizes;
         }
 
         public FileResult(string error)
@@ -35,5 +39,9 @@ namespace AzureStorageSample.Models.FileResult
         {
             get; set;
         }
+
+        public TimeSpan? DownloadDuration { get; set; }
+
+        public List<string> DownloadedBlobsSizes { get; set; }
     }
 }

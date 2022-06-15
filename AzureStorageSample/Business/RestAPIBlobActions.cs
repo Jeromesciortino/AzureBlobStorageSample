@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AzureStorageSample.Models.XMLModels;
+using AzureStorageSample.Models.FileResult;
 
 namespace AzureStorageSample.Business
 {
@@ -163,6 +164,16 @@ namespace AzureStorageSample.Business
             );
 
             return authorizationHeader;
+        }
+
+        public FileResult DownloadAllBlobs(List<string> blobNames)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FileResult TestDownloadAllBlobs(List<string> blobNames)
+        {
+            throw new NotImplementedException();
         }
     }
 }
